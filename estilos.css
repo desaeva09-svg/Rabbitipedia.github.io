@@ -1,0 +1,464 @@
+/*   RABBITIPEDIA
+   Hoja de estilos principal
+   */
+
+
+/* TIPOGRAFÍAS */
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Paytone+One&display=swap');
+
+
+/* PALETA DE COLORES */
+
+:root {
+    --rosa-principal: #bd7ccf;
+    --rosa-claro: #f1beff;
+    --rosa-suave: #f6dff5;
+    --morado: #6d4678;
+    --morado-oscuro: #321d38;
+    --blanco: #ffffff;
+
+    /* Cuadro más oscuro para separarlo del fondo */
+    --fondo-tarjeta: rgba(50, 29, 56, 0.82);
+}
+
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    /* Mantiene el fondo que ya tengas colocado en tu HTML */
+    color: var(--blanco);
+
+    font-family: 'Josefin Sans', sans-serif;
+
+    text-align: center;
+}
+
+
+/* CONTENEDOR PRINCIPAL */
+
+.contenedor {
+    width: 90%;
+    max-width: 900px;
+
+    margin: 40px auto;
+    padding: 35px;
+
+    /* Fondo oscuro translúcido */
+    background: var(--fondo-tarjeta);
+
+    border: 2px dotted var(--rosa-claro);
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(5px);
+
+    text-align: center;
+}
+
+
+/* ENCABEZADO */
+
+header {
+    padding-bottom: 20px;
+
+    text-align: center;
+}
+
+
+h1 {
+    margin-top: 35px;
+    margin-bottom: 20px;
+
+    font-family: 'Paytone One', sans-serif;
+
+    font-size: 30px;
+
+    text-transform: uppercase;
+
+    /* Gradiente más luminoso */
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #ffd1f1,
+        #e8a8f5
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    /* Hace que destaque del fondo */
+    filter:
+        drop-shadow(0 3px 4px rgba(0, 0, 0, 0.45));
+
+    text-align: center;
+
+    /* Animación de entrada */
+    animation: aparecer 1.2s ease-out;
+}
+
+
+h4 {
+    font-family: 'Paytone One', sans-serif;
+
+    color: var(--rosa-claro);
+
+    font-size: 16px;
+
+    text-align: center;
+
+    text-shadow:
+        1px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.decoracion {
+    color: var(--rosa-claro);
+}
+
+
+/* TEXTO */
+
+p {
+    max-width: 700px;
+
+    margin: 15px auto;
+
+    color: var(--blanco);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    line-height: 1.8;
+
+    /* Texto centrado */
+    text-align: center;
+
+    /* Sombra ligera para mejorar lectura */
+    text-shadow:
+        1px 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+
+/* ENCABEZADOS DE SECCIÓN */
+
+h2,
+h3 {
+    font-family: 'Paytone One', sans-serif;
+
+    color: var(--rosa-claro);
+
+    text-align: center;
+
+    text-shadow:
+        2px 2px 0px rgba(50, 29, 56, 0.9),
+        0 3px 6px rgba(0, 0, 0, 0.45);
+}
+
+.menu-rabbitipedia a {
+    color: var(--rosa-claro);
+}
+
+/* IMÁGENES */
+
+img {
+    max-width: 100%;
+}
+
+
+.imagen-principal {
+    width: 300px;
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    border: 3px solid var(--rosa-claro);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.imagen-principal:hover {
+    transform: scale(1.04);
+
+    box-shadow:
+        0 12px 28px rgba(241, 190, 255, 0.4);
+}
+
+
+/* CONEJOS */
+
+.conejos-inicio {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.conejo {
+    object-fit: contain;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.conejo:hover {
+    transform: translateY(-8px) scale(1.05);
+}
+
+
+/* ANIMACIÓN */
+
+@keyframes floating {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+.conejo {
+    animation: floating 3s ease-in-out infinite;
+}
+
+
+/* IMÁGENES DE SECCIÓN */
+
+.imagen-seccion {
+    width: 300px;
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    border: 2px solid var(--rosa-claro);
+
+    margin: 20px 0;
+
+    transition: transform 0.3s ease;
+}
+
+
+.imagen-seccion:hover {
+    transform: scale(1.05);
+}
+
+
+/* GALERÍAS */
+
+.galeria {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin: 25px 0;
+}
+
+
+.galeria img {
+    width: 200px;
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    border: 2px solid var(--rosa-claro);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.galeria img:hover {
+    transform: translateY(-8px) scale(1.04);
+
+    box-shadow:
+        0 10px 25px rgba(241, 190, 255, 0.35);
+}
+
+
+/* SECCIONES */
+
+section {
+    padding: 25px 0;
+
+    border-bottom: 1px solid rgba(241, 190, 255, 0.3);
+
+    text-align: center;
+}
+
+
+section:last-child {
+    border-bottom: none;
+}
+
+
+/* PIE DE PÁGINA */
+
+footer {
+    margin-top: 30px;
+
+    padding-top: 25px;
+
+    border-top: 2px dotted var(--rosa-claro);
+
+    text-align: center;
+}
+
+
+footer p {
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.85;
+}
+
+
+/* TABLETA */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+
+    .contenedor {
+        width: 95%;
+
+        padding: 25px;
+    }
+
+
+    h1 {
+        font-size: 26px;
+    }
+
+
+    p {
+        font-size: 14px;
+
+        line-height: 1.7;
+
+        text-align: center;
+    }
+
+
+    .galeria img {
+        width: 180px;
+        height: 180px;
+    }
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 10px 5px;
+
+        background-attachment: scroll;
+    }
+
+
+    .contenedor {
+        width: 100%;
+
+        padding: 18px;
+
+        border-radius: 18px;
+    }
+
+
+    h1 {
+        font-size: 21px;
+
+        margin-top: 25px;
+    }
+
+
+    h4 {
+        font-size: 13px;
+    }
+
+
+    p {
+        font-size: 13px;
+
+        line-height: 1.6;
+
+        text-align: center;
+    }
+
+
+    .conejos-inicio {
+        gap: 3px;
+    }
+
+
+    .imagen-principal {
+        width: 240px;
+        height: 240px;
+    }
+
+
+    .imagen-seccion {
+        width: 240px;
+        height: 240px;
+    }
+
+
+    .galeria {
+        gap: 10px;
+    }
+
+
+    .galeria img {
+        width: 130px;
+        height: 130px;
+    }
+
+}
